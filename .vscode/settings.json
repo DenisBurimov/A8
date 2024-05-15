@@ -1,6 +1,7 @@
 {
   "python.testing.pytestArgs": [
-    "tests"
+    "tests",
+    "django_template_project/users/tests"
   ],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true

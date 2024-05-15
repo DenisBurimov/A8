@@ -9,7 +9,6 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # django_template_project/
 APPS_DIR = BASE_DIR / "django_template_project"
 env = environ.Env()
-env.read_env(str(BASE_DIR / ".env"))
 
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)
 if READ_DOT_ENV_FILE:
