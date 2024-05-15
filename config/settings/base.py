@@ -9,6 +9,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # django_template_project/
 APPS_DIR = BASE_DIR / "django_template_project"
 env = environ.Env()
+env.read_env(str(BASE_DIR / ".env"))
 
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)
 if READ_DOT_ENV_FILE:
@@ -317,7 +318,9 @@ ACCOUNT_FORMS = {"signup": "django_template_project.users.forms.UserSignupForm"}
 # https://docs.allauth.org/en/latest/socialaccount/configuration.html
 SOCIALACCOUNT_ADAPTER = "django_template_project.users.adapters.SocialAccountAdapter"
 # https://docs.allauth.org/en/latest/socialaccount/configuration.html
-SOCIALACCOUNT_FORMS = {"signup": "django_template_project.users.forms.UserSocialSignupForm"}
+SOCIALACCOUNT_FORMS = {
+    "signup": "django_template_project.users.forms.UserSocialSignupForm"
+}
 
 # django-rest-framework
 # -------------------------------------------------------------------------------
